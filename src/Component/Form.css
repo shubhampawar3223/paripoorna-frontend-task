@@ -1,0 +1,27 @@
+#registerElement{
+     position: absolute;
+     top:-13px;
+     left:3%;
+     background-color: white;
+}
+
+.form-element{
+    position: relative;
+    border-radius:10px;
+}
+
+.label-element{
+   display:grid;
+   place-items: center;
+}
+
+.add-element{
+   position: relative; 
+}
+
+.add-button{
+    position: absolute;
+    right: 20px;
+    top:10px;
+
+}
