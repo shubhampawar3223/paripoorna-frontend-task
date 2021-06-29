@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import axios from 'axios';
 import './Form.css';
 
@@ -13,7 +13,7 @@ export default function Form(props){
     const [jobType,setType] = useState(null);
     const [dob,setDob] = useState(null);
     const [location,setLocation] = useState(null);     
-    
+    let imageRef = useRef();
     
     useEffect(()=>{
         
@@ -46,7 +46,7 @@ export default function Form(props){
     
     const clearData = ()=>{
         setName(()=>"");
-        setImage(()=>"");
+        imageRef.current.value="";
         setUrl(()=>"");
         setCode(()=>"");
         setMobile(()=>"");
@@ -160,10 +160,10 @@ export default function Form(props){
 
                           <div className="row col-6 mt-3"> 
                            <div className="col-3 label-element" >  
-                          <label>Pic. Url</label>
+                          <label>Profile Pic.</label>
                           </div>
                           <div className="col-9">
-                          <input className="form-control" type="file" accept=".png, .jpg, .gif, .jpeg" required onChange={getUrl}/>
+                          <input className="form-control" ref={imageRef} type="file" accept=".png, .jpg, .gif, .jpeg" required onChange={getUrl}/>
                           
                           </div>
                           </div>
