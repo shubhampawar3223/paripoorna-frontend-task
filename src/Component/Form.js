@@ -14,7 +14,7 @@ export default function Form(props){
     const [dob,setDob] = useState(null);
     const [location,setLocation] = useState(null);     
     
-    console.log("Hie")   
+    
     useEffect(()=>{
         
        if(props.update === 1){ 
